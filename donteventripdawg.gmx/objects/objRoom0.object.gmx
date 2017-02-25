@@ -29,6 +29,8 @@
 p2 = instance_find(objPlayer2, 1);
 
 scrLinkRope(p1, p2, 20);
+
+p2.x += 32;
 </string>
           </argument>
         </arguments>

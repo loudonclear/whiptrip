@@ -16,6 +16,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrLinkRope.gml</script>
+    <script>scripts\scrDrawRope.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\objTriangle</object>
