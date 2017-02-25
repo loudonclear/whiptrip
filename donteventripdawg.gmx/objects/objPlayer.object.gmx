@@ -59,6 +59,7 @@ player_speed = 10;
             <kind>1</kind>
             <string>if(!ragdolling){
     if(keyboard_check(left)){
+        show_debug_message("left!");
         physics_apply_impulse(x,y,-player_speed,0);        
     }
     if(keyboard_check(right)){
@@ -94,6 +95,31 @@ player_speed = 10;
           <argument>
             <kind>1</kind>
             <string>//Do this
+		</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Player Hit Enemy
+
+//do stuff
 </string>
           </argument>
         </arguments>
