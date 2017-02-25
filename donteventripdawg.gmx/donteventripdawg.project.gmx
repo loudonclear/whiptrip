@@ -15,6 +15,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\objPlayer</object>
     <object>objects\objRope</object>
     <object>objects\objRopeEnd</object>
     <object>objects\objPlayer1</object>
