@@ -8,6 +8,8 @@
   <sprites name="sprites">
     <sprite>sprites\sprRopeSegment</sprite>
     <sprite>sprites\sprRope</sprite>
+    <sprite>sprites\sprPlayer1</sprite>
+    <sprite>sprites\sprPlayer2</sprite>
     <sprite>sprites\sprRopeEnd</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -15,6 +17,8 @@
   <objects name="objects">
     <object>objects\objRope</object>
     <object>objects\objRopeEnd</object>
+    <object>objects\objPlayer1</object>
+    <object>objects\objPlayer2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm0</room>
