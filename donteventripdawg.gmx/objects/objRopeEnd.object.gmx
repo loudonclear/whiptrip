@@ -25,37 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>offset_y = 0;
-host = self;
-next_rope = instance_create(x, y + offset_y, objRope);
-
-attach = physics_joint_distance_create(host, next_rope, host.x, host.y, next_rope.x, next_rope.y, false);
-physics_joint_set_value(attach, phy_joint_damping_ratio, 1);
-physics_joint_set_value(attach, phy_joint_frequency, 10);
-
-with(next_rope) {
-    parent = other.id;
-}
-
-repeat(10) {
-    offset_y += 1;
-    last_rope = next_rope;
-    next_rope = instance_create(x, y + offset_y, objRope);
-    
-    link = physics_joint_distance_create(last_rope, next_rope, last_rope.x, last_rope.y, next_rope.x, next_rope.y, false);
-    physics_joint_set_value(link, phy_joint_damping_ratio, 1);
-    physics_joint_set_value(link, phy_joint_frequency, 10);
-    
-    with(next_rope) {
-        parent = other.last_rope;
-    }
-}
+            <string>parent = noone;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -72,8 +48,8 @@ repeat(10) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phy_position_x = mouse_x;
-phy_position_y = mouse_y;
+            <string>phy_position_x = parent.phy_position_x;
+phy_position_y = parent.phy_position_y;
 </string>
           </argument>
         </arguments>

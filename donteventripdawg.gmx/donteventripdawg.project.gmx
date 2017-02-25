@@ -7,18 +7,22 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\sprRopeSegment</sprite>
-    <sprite>sprites\sprRope</sprite>
     <sprite>sprites\sprPlayer1</sprite>
     <sprite>sprites\sprPlayer2</sprite>
-    <sprite>sprites\sprRopeEnd</sprite>
+    <sprite>sprites\sprFloor</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scrLinkRope.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\objRope</object>
-    <object>objects\objRopeEnd</object>
+    <object>objects\objRoom0</object>
+    <object>objects\objPlayer</object>
     <object>objects\objPlayer1</object>
     <object>objects\objPlayer2</object>
+    <object>objects\objFloor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm0</room>
