@@ -33,7 +33,7 @@ down = ord('S');
 right = ord('D');
 
 
-playerfix = physics_fixture_create();
+//playerfix = physics_fixture_create();
 </string>
           </argument>
         </arguments>

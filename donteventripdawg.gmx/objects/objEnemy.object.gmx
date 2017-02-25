@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>maxDist = 300;
 enemySpeed = 200;
+phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
@@ -101,8 +102,8 @@ if(dist1 &lt; maxDist || dist2 &lt; maxDist){
 //TODO: get killed?
 
 //if rope.taut
-x = irandom(room_width);
-y = irandom(room_height);
+phy_position_x = irandom(room_width);
+phy_position_y = irandom(room_height);
 </string>
           </argument>
         </arguments>
