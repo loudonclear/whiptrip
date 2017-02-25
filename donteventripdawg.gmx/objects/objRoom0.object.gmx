@@ -28,7 +28,7 @@
             <string>p1 = instance_find(objPlayer1, 1);
 p2 = instance_find(objPlayer2, 1);
 
-scrLinkRope(p1, p2, 10);
+scrLinkRope(p1, p2, 20);
 </string>
           </argument>
         </arguments>

@@ -9,6 +9,7 @@
     <sprite>sprites\sprRopeSegment</sprite>
     <sprite>sprites\sprPlayer1</sprite>
     <sprite>sprites\sprPlayer2</sprite>
+    <sprite>sprites\sprTriangle</sprite>
     <sprite>sprites\sprFloor</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -17,6 +18,7 @@
     <script>scripts\scrLinkRope.gml</script>
   </scripts>
   <objects name="objects">
+    <object>objects\objTriangle</object>
     <object>objects\objRope</object>
     <object>objects\objRoom0</object>
     <object>objects\objPlayer</object>
