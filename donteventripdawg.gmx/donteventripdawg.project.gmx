@@ -25,8 +25,8 @@
     <object>objects\objRoom0</object>
     <object>objects\objPlayer</object>
     <object>objects\objPlayer1</object>
-    <object>objects\objEnemy</object>
     <object>objects\objPlayer2</object>
+    <object>objects\objEnemy</object>
     <object>objects\objFloor</object>
   </objects>
   <rooms name="rooms">

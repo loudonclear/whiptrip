@@ -49,7 +49,14 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-    
+
+p2 = instance_find(objPlayer2, 1);
+
+if(distance_to_object(p2) &gt;= 160) {
+    global.taut = true;
+} else {
+    global.taut = false;
+}
 </string>
           </argument>
         </arguments>

@@ -60,7 +60,6 @@ if(dist1 &lt; maxDist || dist2 &lt; maxDist){
     if(dist1 &lt; dist2){
         //chase 1
         dir = point_direction(x,y,player1.x,player1.y);
-        show_debug_message(lengthdir_x(dist1, dir)/dist1);
         xpower = enemySpeed * (lengthdir_x(dist1, dir)/dist1);
         ypower = enemySpeed * (lengthdir_y(dist1, dir)/dist1);
         physics_apply_force(x,y,xpower,ypower);
@@ -68,8 +67,6 @@ if(dist1 &lt; maxDist || dist2 &lt; maxDist){
     }else {
         //chase 2
         dir = point_direction(x,y,player2.x,player2.y);
-        
-        show_debug_message(lengthdir_x(dist2, dir)/dist2);
         xpower = enemySpeed * (lengthdir_x(dist2, dir)/dist2);
         ypower = enemySpeed * (lengthdir_y(dist2, dir)/dist2);
         physics_apply_force(x,y,xpower,ypower);
@@ -102,8 +99,10 @@ if(dist1 &lt; maxDist || dist2 &lt; maxDist){
 //TODO: get killed?
 
 //if rope.taut
-phy_position_x = irandom(room_width);
-phy_position_y = irandom(room_height);
+if(global.taut) {
+    phy_position_x = irandom(room_width);
+    phy_position_y = irandom(room_height);
+}
 </string>
           </argument>
         </arguments>
@@ -112,7 +111,7 @@ phy_position_y = irandom(room_height);
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
@@ -123,6 +122,8 @@ phy_position_y = irandom(room_height);
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>0,0</point>
-    <point>16,16</point>
+    <point>32,0</point>
+    <point>32,32</point>
+    <point>0,32</point>
   </PhysicsShapePoints>
 </object>
