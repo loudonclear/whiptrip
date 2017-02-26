@@ -59,20 +59,35 @@ dist2 = distance_to_object(player2);
 if(dist1 &lt; maxDist || dist2 &lt; maxDist){
     if(dist1 &lt; dist2){
         //chase 1
-        dir = point_direction(x,y,player1.x,player1.y);
-        show_debug_message(lengthdir_x(dist1, dir)/dist1);
+        stepper = instance_create(phy_position_x,phy_position_y,objEnemyStepper);
+        with(stepper){
+            mp_potential_step_object(
+            other.player1.phy_position_x,
+            other.player1.phy_position_y,1, objFloor);
+        }
+        dir = point_direction(phy_position_x,phy_position_y,
+                                stepper.x,stepper.y);
+        with(stepper){
+            instance_destroy();
+        }
         xpower = enemySpeed * (lengthdir_x(dist1, dir)/dist1);
         ypower = enemySpeed * (lengthdir_y(dist1, dir)/dist1);
-        physics_apply_force(x,y,xpower,ypower);
+        physics_apply_force(phy_com_x,phy_com_y,xpower,ypower);
     
     }else {
-        //chase 2
-        dir = point_direction(x,y,player2.x,player2.y);
-        
-        show_debug_message(lengthdir_x(dist2, dir)/dist2);
+        //chase 2        
+        stepper = instance_create(phy_position_x,phy_position_y,objEnemyStepper);
+        with(stepper){
+            mp_potential_step_object(
+            other.player2.phy_position_x,other.player2.phy_position_y,1, objFloor);
+        }
+        dir = point_direction(phy_position_x,phy_position_y,stepper.x,stepper.y);
+        with(stepper){
+            instance_destroy();
+        }
         xpower = enemySpeed * (lengthdir_x(dist2, dir)/dist2);
         ypower = enemySpeed * (lengthdir_y(dist2, dir)/dist2);
-        physics_apply_force(x,y,xpower,ypower);
+        physics_apply_force(phy_com_x,phy_com_y,xpower,ypower);
     }
 }
 

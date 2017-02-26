@@ -13,6 +13,7 @@ yoff = o1.y;
 for(var i = 0; i < numSegments; i++) {
     r2 = instance_create(xoff + stepx, yoff + stepy, objRope);
     r2.parent = r1;
+    
     link = physics_joint_distance_create(r1, r2, r1.x, r1.y, r2.x, r2.y, false);
     physics_joint_set_value(link, phy_joint_damping_ratio, 1);
     physics_joint_set_value(link, phy_joint_frequency, 10);

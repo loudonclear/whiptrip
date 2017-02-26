@@ -9,9 +9,11 @@
     <sprite>sprites\sprRopeSegment</sprite>
     <sprite>sprites\sprPlayer1</sprite>
     <sprite>sprites\sprPlayer2</sprite>
+    <sprite>sprites\sprStepper</sprite>
     <sprite>sprites\sprEnemy</sprite>
     <sprite>sprites\sprTriangle</sprite>
     <sprite>sprites\sprFloor</sprite>
+    <sprite>sprites\sprHeart</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +26,7 @@
     <object>objects\objRoom0</object>
     <object>objects\objPlayer</object>
     <object>objects\objPlayer1</object>
+    <object>objects\objEnemyStepper</object>
     <object>objects\objEnemy</object>
     <object>objects\objPlayer2</object>
     <object>objects\objFloor</object>
