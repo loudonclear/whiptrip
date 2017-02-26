@@ -13,7 +13,9 @@
     <sprite>sprites\sprTriangle</sprite>
     <sprite>sprites\sprFloor</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bgSpace</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scrLinkRope.gml</script>

@@ -32,6 +32,8 @@ down = vk_down;
 
 global.taut = false;
 
+image_speed = 0;
+
 ragdolling = false;
 
 //Physics

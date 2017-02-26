@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bgSpace" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -55,12 +55,15 @@
     <instance objName="objRoom0" x="0" y="0" name="inst_DD914D2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayer1" x="192" y="160" name="inst_C244AF10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPlayer2" x="416" y="160" name="inst_49D25313" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="192" y="512" name="inst_EBA72504" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="448" y="512" name="inst_27219115" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="800" y="608" name="inst_BDB70BC6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="800" y="416" name="inst_F7095C05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTriangle" x="640" y="224" name="inst_0E6D50DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTriangle" x="96" y="672" name="inst_3993CC70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="384" name="inst_BDB70BC6" locked="0" code="" scaleX="0.74193549156189" scaleY="24.09375" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="512" y="768" name="inst_F7095C05" locked="0" code="" scaleX="32.25" scaleY="0.75" colour="4294967295" rotation="0"/>
+    <instance objName="objTriangle" x="448" y="448" name="inst_37A77CC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="1024" y="384" name="inst_4CFFF269" locked="0" code="" scaleX="0.74193549156189" scaleY="24.09375" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="512" y="0" name="inst_88E606DD" locked="0" code="" scaleX="32.25" scaleY="0.75" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="64" y="256" name="inst_1A1A6C1A" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="64" y="448" name="inst_F9C4FBA1" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="960" y="256" name="inst_B6E0BD83" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="960" y="448" name="inst_D4BA08E5" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
