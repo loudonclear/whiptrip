@@ -50,7 +50,6 @@
             <kind>1</kind>
             <string>event_inherited();
 
-
 </string>
           </argument>
         </arguments>
@@ -110,7 +109,14 @@ for(i = maxHealth/healthperheart -1; i &gt;= 0; i-=1){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>health -=1;
+            <string>Health -=1;
+p2 = instance_find(objPlayer2, 1);
+
+if(distance_to_object(p2) &gt;= 160) {
+    global.taut = true;
+} else {
+    global.taut = false;
+}
 </string>
           </argument>
         </arguments>
