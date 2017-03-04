@@ -50,6 +50,15 @@
             <kind>1</kind>
             <string>event_inherited();
 
+p2 = instance_find(objPlayer2, 1);
+
+show_debug_message(distance_to_object(p2));
+
+if(distance_to_object(p2) &gt;= 285) {
+    global.taut = true;
+} else {
+    global.taut = false;
+}
 </string>
           </argument>
         </arguments>
@@ -92,42 +101,12 @@ for(i = maxHealth/healthperheart -1; i &gt;= 0; i-=1){
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>Health -=1;
-p2 = instance_find(objPlayer2, 1);
-
-if(distance_to_object(p2) &gt;= 160) {
-    global.taut = true;
-} else {
-    global.taut = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectRestitution>3</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>10</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>2</PhysicsObjectAngularDamping>

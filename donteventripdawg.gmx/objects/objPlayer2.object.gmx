@@ -31,9 +31,8 @@ up = ord('W');
 left = ord('A');
 down = ord('S');
 right = ord('D');
+rad = ord('E');
 
-
-//playerfix = physics_fixture_create();
 </string>
           </argument>
         </arguments>
@@ -104,7 +103,7 @@ for(i = maxHealth/healthperheart -1; i &gt;= 0; i-=1){
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectRestitution>3</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>10</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>

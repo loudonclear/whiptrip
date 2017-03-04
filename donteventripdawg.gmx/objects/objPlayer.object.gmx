@@ -29,6 +29,7 @@
 up = vk_up;
 right = vk_right;
 down = vk_down;
+rag = vk_space;
 
 global.taut = false;
 
@@ -43,6 +44,28 @@ Health = maxHealth;
 phy_linear_damping = 5;
 player_speed = 10;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -77,6 +100,14 @@ player_speed = 10;
     if(keyboard_check(down)){
         physics_apply_impulse(x,y,0,player_speed);        
     }
+    
+}
+
+if(keyboard_check_pressed(rag)) {
+    ragdolling = true;
+    physics_apply_force(phy_com_x,phy_com_y,3,3);
+} else {
+    ragdolling = false;
 }
 </string>
           </argument>
@@ -102,6 +133,29 @@ player_speed = 10;
             <kind>1</kind>
             <string>//Do this
 		</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Health -= 1;
+</string>
           </argument>
         </arguments>
       </action>
