@@ -63,7 +63,6 @@
     <instance objName="objFloor" x="64" y="448" name="inst_F9C4FBA1" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="960" y="256" name="inst_B6E0BD83" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="960" y="448" name="inst_D4BA08E5" locked="0" code="" scaleX="3.25" scaleY="1.25" colour="4294967295" rotation="0"/>
-    <instance objName="objEnemy" x="544" y="352" name="inst_3AD168F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

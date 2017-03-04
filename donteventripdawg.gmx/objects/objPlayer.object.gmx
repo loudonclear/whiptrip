@@ -100,15 +100,32 @@ player_speed = 10;
     if(keyboard_check(down)){
         physics_apply_impulse(x,y,0,player_speed);        
     }
-    
+    //Dot product stuff
+    otherplayer = noone;
+    if(id == objPlayer1.id){
+        otherPlayer = objPlayer2;
+    }else {
+        otherPlayer = objPlayer1;
+    }
+    //dirmoving = point_direction(phy_position_x, phy_position_y, phy_position_x+phy_speed_x, phy_position_y + phy_speed_y);
+    if(global.taut &amp;&amp; dot_product_normalised(phy_speed_x/phy_speed,phy_speed_y/phy_speed,
+    otherPlayer.phy_position_x - phy_position_x,
+    otherPlayer.phy_position_y - phy_position_y) &lt; 0){
+        //phy_speed = 0;
+        phy_linear_damping = 100000;
+        show_debug_message("stop me");
+    }else {
+        phy_linear_damping = 10;
+        //show_debug_message("lemme go");    
+    }
 }
 
-if(keyboard_check_pressed(rag)) {
+/*if(keyboard_check_pressed(rag)) {
     ragdolling = true;
     physics_apply_force(phy_com_x,phy_com_y,3,3);
 } else {
     ragdolling = false;
-}
+}*/
 </string>
           </argument>
         </arguments>

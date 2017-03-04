@@ -51,10 +51,7 @@
             <string>event_inherited();
 
 p2 = instance_find(objPlayer2, 1);
-
-show_debug_message(distance_to_object(p2));
-
-if(distance_to_object(p2) &gt;= 285) {
+if(distance_to_object(p2) &gt;= 224) {
     global.taut = true;
 } else {
     global.taut = false;
