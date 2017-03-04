@@ -100,7 +100,7 @@ link = noone;
     //scrDrawRope(x, y, parent.x, parent.y, sprRopeSegment);
 }
 
-physics_draw_debug();
+//physics_draw_debug();
 </string>
           </argument>
         </arguments>
