@@ -42,30 +42,10 @@ Health = maxHealth;
 
 //Physics
 phy_linear_damping = 5;
-player_speed = 10;
+player_speed = 20;
+whip_speed = 400;
+max_speed = 19;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
@@ -87,45 +67,81 @@ player_speed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!ragdolling){
-    if(keyboard_check(left)){
-        physics_apply_impulse(x,y,-player_speed,0);        
-    }
-    if(keyboard_check(right)){
-        physics_apply_impulse(x,y,player_speed,0);        
-    }
-    if(keyboard_check(up)){
-        physics_apply_impulse(x,y,0,-player_speed);        
-    }
-    if(keyboard_check(down)){
-        physics_apply_impulse(x,y,0,player_speed);        
-    }
-    //Dot product stuff
-    otherplayer = noone;
-    if(id == objPlayer1.id){
-        otherPlayer = objPlayer2;
-    }else {
-        otherPlayer = objPlayer1;
-    }
-    //dirmoving = point_direction(phy_position_x, phy_position_y, phy_position_x+phy_speed_x, phy_position_y + phy_speed_y);
-    if(global.taut &amp;&amp; dot_product_normalised(phy_speed_x/phy_speed,phy_speed_y/phy_speed,
-    otherPlayer.phy_position_x - phy_position_x,
-    otherPlayer.phy_position_y - phy_position_y) &lt; 0){
-        //phy_speed = 0;
-        phy_linear_damping = 100000;
-        show_debug_message("stop me");
-    }else {
-        phy_linear_damping = 10;
-        //show_debug_message("lemme go");    
-    }
+            <string>otherplayer = noone;
+if(id == objPlayer1.id){
+    otherPlayer = objPlayer2;
+}else {
+    otherPlayer = objPlayer1;
 }
 
-/*if(keyboard_check_pressed(rag)) {
-    ragdolling = true;
-    physics_apply_force(phy_com_x,phy_com_y,3,3);
-} else {
-    ragdolling = false;
-}*/
+if(!ragdolling){
+    if(otherPlayer.ragdolling){
+        //Other player ragdolling, move hime around
+        phy_linear_damping = 100000;
+        angle = arctan2(otherPlayer.y - y, otherPlayer.x - x) *-180/pi;
+        if(keyboard_check_pressed(left)){
+            with(otherPlayer){
+                physics_apply_impulse(phy_com_x,phy_com_y,lengthdir_x(whip_speed,other.angle+100),
+                                                          lengthdir_y(whip_speed,other.angle+100)); 
+            }
+        }
+        if(keyboard_check_pressed(right)){
+            with(otherPlayer){
+                physics_apply_impulse(phy_com_x,phy_com_y,lengthdir_x(whip_speed,other.angle-100),
+                                                          lengthdir_y(whip_speed,other.angle-100)); 
+            }
+        }
+        if(keyboard_check_pressed(down)){
+            with(otherPlayer){
+                physics_apply_impulse(phy_com_x,phy_com_y,lengthdir_x(-whip_speed,other.angle),
+                                                          lengthdir_y(-whip_speed,other.angle)); 
+            }
+        }
+    }else {
+        //regular movement
+        if(keyboard_check(left)){
+            physics_apply_impulse(x,y,-player_speed,0);        
+        }
+        if(keyboard_check(right)){
+            physics_apply_impulse(x,y,player_speed,0);        
+        }
+        if(keyboard_check(up)){
+            physics_apply_impulse(x,y,0,-player_speed);        
+        }
+        if(keyboard_check(down)){
+            physics_apply_impulse(x,y,0,player_speed);        
+        }
+        //Dot product stuff
+        //prints dot product for making stop better
+        /*if(id == instance_find(objPlayer1,1)){
+        show_debug_message(dot_product_normalised(phy_speed_x/phy_speed,phy_speed_y/phy_speed,
+        otherPlayer.phy_position_x - phy_position_x,
+        otherPlayer.phy_position_y - phy_position_y));
+        }*/
+        if(global.taut &amp;&amp; dot_product_normalised(phy_speed_x/phy_speed,phy_speed_y/phy_speed,
+        otherPlayer.phy_position_x - phy_position_x,
+        otherPlayer.phy_position_y - phy_position_y) &lt; 0){
+            //taut and trying to move away
+            phy_linear_damping = 100000;
+        }else {
+            //no one ragdolling, normal movement
+            phy_linear_damping = 10;
+        }
+    }
+}else{
+    //self is ragdolling
+    phy_linear_damping = 0.8;
+}
+
+if(keyboard_check_pressed(rag)) {
+    ragdolling = !ragdolling;
+}
+if(phy_speed &gt; max_speed){
+    phy_speed_x = phy_speed_x/phy_speed*max_speed;
+    phy_speed_y = phy_speed_y/phy_speed*max_speed;
+}
+
+
 </string>
           </argument>
         </arguments>

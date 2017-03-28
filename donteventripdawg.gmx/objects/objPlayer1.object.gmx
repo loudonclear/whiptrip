@@ -51,7 +51,7 @@
             <string>event_inherited();
 
 p2 = instance_find(objPlayer2, 1);
-if(distance_to_object(p2) &gt;= 224) {
+if(distance_to_object(p2) &gt;= 230) {
     global.taut = true;
 } else {
     global.taut = false;
@@ -106,7 +106,7 @@ for(i = maxHealth/healthperheart -1; i &gt;= 0; i-=1){
   <PhysicsObjectRestitution>3</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>10</PhysicsObjectLinearDamping>
-  <PhysicsObjectAngularDamping>2</PhysicsObjectAngularDamping>
+  <PhysicsObjectAngularDamping>200</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>

@@ -96,8 +96,14 @@ link = noone;
           <argument>
             <kind>1</kind>
             <string>if(parent != -1) {
-    draw_line_width(x, y, parent.x, parent.y, 3);
-    //scrDrawRope(x, y, parent.x, parent.y, sprRopeSegment);
+    //draw_line_width(x, y, parent.x, parent.y, 3);
+    dis = distance_to_object(parent);
+    draw_sprite_general(sprRopeSegment2, 0, 0, 0, 
+    9+dis,//sprite_get_width(sprRopeSegment2), 
+    sprite_get_height(sprRopeSegment2), 
+    x, y+sprite_get_height(sprRopeSegment2)/2, 1, 1, point_direction(x,y,parent.x,parent.y), 
+    c_white, c_white, c_white, c_white, 1);
+    //scrDrawRope(x, y, parent.x, parent.y, sprRopeSegment2);
 }
 
 //physics_draw_debug();
