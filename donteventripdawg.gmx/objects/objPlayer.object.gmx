@@ -25,23 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>left = vk_left;
+            <string>//Controls
+left = vk_left;
 up = vk_up;
 right = vk_right;
 down = vk_down;
 rag = vk_space;
 
+//variables
 global.taut = false;
+ragdolling = false;
 
 image_speed = 0;
 
-ragdolling = false;
-
+//Health
 maxHealth = 16;
 Health = maxHealth;
 
 //Physics
 phy_linear_damping = 5;
+phy_angular_damping = 200;
+
+//Speeds
 player_speed = 20;
 whip_impulse = 5000;
 whip_speed = 4;
@@ -94,8 +99,8 @@ if(!ragdolling){
         }
         if(keyboard_check_pressed(down)){
             with(otherPlayer){
-                physics_apply_impulse(phy_com_x,phy_com_y,lengthdir_x(-whip_impulse,other.angle),
-                                                          lengthdir_y(-whip_impulse,other.angle)); 
+                physics_apply_impulse(phy_com_x,phy_com_y,lengthdir_x(-60,other.angle),
+                                                          lengthdir_y(-60,other.angle)); 
             }
         }
         if(keyboard_check(left)){

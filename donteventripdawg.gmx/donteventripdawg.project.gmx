@@ -34,6 +34,7 @@
     <object>objects\objPlayer</object>
     <object>objects\objEnemy</object>
     <object>objects\objPlayer1</object>
+    <object>objects\objCamera</object>
     <object>objects\objPlayer2</object>
     <object>objects\objFloor</object>
   </objects>
